@@ -1,11 +1,14 @@
 package com.multi_cardview;
 
+import android.content.Context;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,10 +20,9 @@ import java.util.List;
 public class MultiLayout_Layout2_Adapter extends RecyclerView.Adapter<MultiLayout_Layout2_Adapter.ViewHolder_layout2>{
 
     private List<CardViewData_Layout2> Data_List;
-    private int Layout_Style_idx;
 
-    public MultiLayout_Layout2_Adapter(int Layout_Style_idx, List<CardViewData_Layout2> Data_List){
-        this.Layout_Style_idx = Layout_Style_idx;
+    public MultiLayout_Layout2_Adapter(  List<CardViewData_Layout2> Data_List){
+
         this.Data_List = Data_List;
     }
 
@@ -35,7 +37,8 @@ public class MultiLayout_Layout2_Adapter extends RecyclerView.Adapter<MultiLayou
 
     @Override
     public void onBindViewHolder(ViewHolder_layout2 holder, int position) {
-        CardViewData_Layout2 data = Data_List.get(position);
+        final CardViewData_Layout2 data = Data_List.get(position);
+
 
         holder.User_Inf_Image.setBackground(data.getUserInf_Image_Res_Value());
         holder.User_Inf_ID_Text.setText(data.getUserInf_ID_Text_Value());
@@ -65,7 +68,6 @@ public class MultiLayout_Layout2_Adapter extends RecyclerView.Adapter<MultiLayou
 
         public ViewHolder_layout2(View view) {
             super(view);
-
             User_Inf_Image = (ImageView)view.findViewById(R.id.User_Inf_Image);
             User_Inf_ID_Text = (TextView)view.findViewById(R.id.UserInf_ID_Text);
             User_Inf_Tag_Text = (TextView)view.findViewById(R.id.UserInf_Tag_Text);

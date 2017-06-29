@@ -5,7 +5,7 @@ publish {
         userOrg = 'hoidol'
         groupId = 'com.multi.cardview'
         artifactId = 'MultiLayoutCardView'
-        publishVersion = '0.1.2'
+        publishVersion = '0.1.5'
         desc = 'this is RecycleView and CardView'
         website = 'https://github.com/hoidol/Connect'
         issueTracker = "${website}/issues"

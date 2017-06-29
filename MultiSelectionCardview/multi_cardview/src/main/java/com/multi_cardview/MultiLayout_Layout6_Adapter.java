@@ -1,5 +1,7 @@
 package com.multi_cardview;
 
+import android.content.Context;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -8,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,10 +22,8 @@ import java.util.List;
 public class MultiLayout_Layout6_Adapter extends RecyclerView.Adapter<MultiLayout_Layout6_Adapter.ViewHolder_layout6>{
 
     private List<CardViewData_Layout6> Data_List;
-    private int Layout_Style_idx;
 
-    public MultiLayout_Layout6_Adapter(int Layout_Style_idx, List<CardViewData_Layout6> Data_List){
-        this.Layout_Style_idx = Layout_Style_idx;
+    public MultiLayout_Layout6_Adapter(List<CardViewData_Layout6> Data_List){
         this.Data_List = Data_List;
 
     }
@@ -39,7 +40,7 @@ public class MultiLayout_Layout6_Adapter extends RecyclerView.Adapter<MultiLayou
 
     @Override
     public void onBindViewHolder(ViewHolder_layout6 holder, int position) {
-        CardViewData_Layout6 data = Data_List.get(position);
+        final CardViewData_Layout6 data = Data_List.get(position);
 
         holder.CardView_Home_Card_Back_Layout.setBackground(data.getCardView_Image_Res());
         holder.CardView_Grade_Text.setText(data.getCardView_Grade_Text_Value());
@@ -55,8 +56,6 @@ public class MultiLayout_Layout6_Adapter extends RecyclerView.Adapter<MultiLayou
 
     public class ViewHolder_layout6 extends RecyclerView.ViewHolder {
         // each data item is just a string in this case
-
-
         public LinearLayout CardView_Home_Card_Back_Layout;
         public TextView CardView_Grade_Text;
         public TextView CardView_Title_Text;

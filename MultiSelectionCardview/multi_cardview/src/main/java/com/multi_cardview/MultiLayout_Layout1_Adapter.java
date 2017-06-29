@@ -1,5 +1,7 @@
 package com.multi_cardview;
 
+import android.content.Context;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -15,13 +18,11 @@ import java.util.List;
  */
 
 public class MultiLayout_Layout1_Adapter extends RecyclerView.Adapter<MultiLayout_Layout1_Adapter.ViewHolder_layout1>{
-
     private List<CardViewData_Layout1> Data_List;
-    private int Layout_Style_idx;
 
     Button Recommend_Btn;
-    public MultiLayout_Layout1_Adapter(int Layout_Style_idx, List<CardViewData_Layout1> Data_List){
-        this.Layout_Style_idx = Layout_Style_idx;
+    public MultiLayout_Layout1_Adapter(List<CardViewData_Layout1> Data_List){
+
         this.Data_List = Data_List;
     }
 
@@ -36,7 +37,7 @@ public class MultiLayout_Layout1_Adapter extends RecyclerView.Adapter<MultiLayou
 
     @Override
     public void onBindViewHolder(ViewHolder_layout1 holder, int position) {
-        CardViewData_Layout1 data = Data_List.get(position);
+        final CardViewData_Layout1 data = Data_List.get(position);
 
         holder.CardView_ImageView.setBackground(data.getImage_Res_Value());
         holder.CardView_Title_Text.setText(data.getTitle_Text_Value());
@@ -59,6 +60,8 @@ public class MultiLayout_Layout1_Adapter extends RecyclerView.Adapter<MultiLayou
 
     public class ViewHolder_layout1 extends RecyclerView.ViewHolder {
         // each data item is just a string in this case
+
+
         public ImageView CardView_ImageView;
         public TextView CardView_Title_Text;
         public TextView CardView_Cur_Price_Text;
