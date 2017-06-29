@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="MultiLayout_CardView">
+        <attr name="layoutStyle_CardView" format="reference|integer"/>
+    </declare-styleable>
+
+    <declare-styleable name="MultiLayout_RecyclerView">
+        <attr name="layoutStyle_RecyclerView" format="reference|integer"/>
+    </declare-styleable>
+
+
+</resources>
